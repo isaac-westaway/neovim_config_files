@@ -61,6 +61,16 @@ function M.setup()
 			end,
 		}
 
+		use {
+			"folke/which-key.nvim",
+			event = "VimEnter",
+			module = { "which-key" },
+			config = function()
+				require("config.whichkey").setup()
+			end,
+			disable = false,
+		}
+
 		if is_bootstrap then
 			print "neovim restart is required after installation!"
 
