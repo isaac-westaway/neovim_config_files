@@ -56,10 +56,13 @@ function M.setup()
 			"nvim-tree/nvim-tree.lua",
 			opt = true,
 			cmd = { "NvimTreeToggle", "NvimTreeClose" },
+
 			config = function()
 				require("config.nvimtree").setup()
 			end,
 		}
+		
+		use 'nvim-tree/nvim-web-devicons'
 
 		use {
 			"folke/which-key.nvim",
@@ -69,6 +72,13 @@ function M.setup()
 				require("config.whichkey").setup()
 			end,
 			disable = false,
+		}
+
+		use 'nvim-treesitter/nvim-treesitter'
+
+		use {
+			'nvim-telescope/telescope.nvim',
+			requires = { { 'nvim-lua/plenary.nvim'} }
 		}
 
 		if is_bootstrap then
